@@ -1,24 +1,30 @@
 ﻿namespace NunitTesting_Vending_Machine_Q7
 {
-    internal class SquareNumber
+    internal class DecimalToBinary
     {
-        public static int Number;
-        public SquareNumber(int number)
-        {
-            Number = number;
-        }
-        public static void calculateSquareRoot()
-        {
-            Console.WriteLine("Please Enter Your Number :");
-            int number = Convert.ToInt32(Console.ReadLine());
+        public static int Num;
 
-            double square = Math.Sqrt(number);
-            Console.WriteLine("SquareRoot Of Number is : " + square);
+        public DecimalToBinary(int num)
+        {
+            Num = num;
         }
-
+        public static void convertDecimaltoBinary()
+        {
+            Console.WriteLine("Please Enter Your Number:");
+            int Num = Convert.ToInt32(Console.ReadLine());
+            string result = "";
+            while (Num > 0)
+            {
+                int r = Num % 2;
+                result = Convert.ToString(r) + result;
+                Num /= 2;
+            }
+            Console.WriteLine("Conversion Of Decimal to Binary is :" + result);
+        }
         static void Main(string[] args)
         {
-            SquareNumber.calculateSquareRoot();
+            DecimalToBinary.convertDecimaltoBinary();
         }
+
     }
 }
